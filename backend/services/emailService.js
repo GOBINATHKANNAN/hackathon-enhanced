@@ -50,7 +50,7 @@ const emailTemplates = {
         `
     }),
 
-    internshipSubmitted: (studentName, studentEmail, companyName) => ({
+    hackathonSubmitted: (studentName, studentEmail, hackathonTitle) => ({
         from: '"TCE CSBS Hackathon Portal" <no-reply@portal.com>',
         to: studentEmail,
         subject: 'Hackathon Submitted Successfully',
@@ -61,7 +61,7 @@ const emailTemplates = {
                 </div>
                 <div style="padding: 20px; background: #f9f9f9;">
                     <p>Dear ${studentName},</p>
-                    <p>Your participation in <strong>${companyName}</strong> has been submitted successfully and is pending verification from your proctor.</p>
+                    <p>Your participation in <strong>${hackathonTitle}</strong> has been submitted successfully and is pending verification from your proctor.</p>
                     <p>You will receive an email notification once your submission is reviewed.</p>
                     <hr style="margin: 20px 0;">
                     <div style="background: white; padding: 15px; border-left: 4px solid #830000;">
@@ -77,7 +77,7 @@ const emailTemplates = {
         `
     }),
 
-    internshipStatusUpdate: (studentName, studentEmail, companyName, status, rejectionReason = '') => ({
+    hackathonStatusUpdate: (studentName, studentEmail, hackathonTitle, status, rejectionReason = '') => ({
         from: '"TCE CSBS Hackathon Portal" <no-reply@portal.com>',
         to: studentEmail,
         subject: `Hackathon ${status}`,
@@ -88,7 +88,7 @@ const emailTemplates = {
                 </div>
                 <div style="padding: 20px; background: #f9f9f9;">
                     <p>Dear ${studentName},</p>
-                    <p>Your participation in <strong>${companyName}</strong> has been <strong>${status}</strong>.</p>
+                    <p>Your participation in <strong>${hackathonTitle}</strong> has been <strong>${status}</strong>.</p>
                     ${status === 'Rejected' ? `<p style="color: #d32f2f;"><strong>Reason:</strong> ${rejectionReason}</p>` : '<p style="color: #4caf50;">Congratulations! Your hackathon participation has been verified.</p>'}
                     <hr style="margin: 20px 0;">
                     <div style="background: white; padding: 15px; border-left: 4px solid #830000;">

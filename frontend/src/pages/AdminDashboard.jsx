@@ -170,15 +170,15 @@ const AdminDashboard = () => {
                         </div>
                         <div className="stat-card" style={{ background: '#fff3e0', padding: '20px', borderRadius: '8px', textAlign: 'center' }}>
                             <h3 style={{ margin: '0 0 10px 0', color: '#ef6c00' }}>Total Hackathons</h3>
-                            <p style={{ fontSize: '2rem', fontWeight: 'bold', margin: 0 }}>{stats.totalHackathons || stats.totalInternships}</p>
+                            <p style={{ fontSize: '2rem', fontWeight: 'bold', margin: 0 }}>{stats.totalHackathons}</p>
                         </div>
                         <div className="stat-card" style={{ background: '#fff8e1', padding: '20px', borderRadius: '8px', textAlign: 'center' }}>
                             <h3 style={{ margin: '0 0 10px 0', color: '#fbc02d' }}>Pending</h3>
-                            <p style={{ fontSize: '2rem', fontWeight: 'bold', margin: 0 }}>{stats.pendingHackathons || stats.pendingInternships}</p>
+                            <p style={{ fontSize: '2rem', fontWeight: 'bold', margin: 0 }}>{stats.pendingHackathons}</p>
                         </div>
                         <div className="stat-card" style={{ background: '#e8f5e9', padding: '20px', borderRadius: '8px', textAlign: 'center' }}>
                             <h3 style={{ margin: '0 0 10px 0', color: '#2e7d32' }}>Accepted</h3>
-                            <p style={{ fontSize: '2rem', fontWeight: 'bold', margin: 0 }}>{stats.acceptedHackathons || stats.approvedInternships}</p>
+                            <p style={{ fontSize: '2rem', fontWeight: 'bold', margin: 0 }}>{stats.acceptedHackathons}</p>
                         </div>
                     </div>
 
@@ -187,7 +187,7 @@ const AdminDashboard = () => {
                         <button onClick={() => {
                             const csvContent = "data:text/csv;charset=utf-8,"
                                 + "Student,RegisterNo,Hackathon,Mode,Status\n"
-                                + hackathons.map(i => `${i.studentId?.name},${i.studentId?.registerNo},${i.hackathonTitle || i.companyName},${i.mode},${i.status}`).join("\n");
+                                + hackathons.map(i => `${i.studentId?.name},${i.studentId?.registerNo},${i.hackathonTitle},${i.mode},${i.status}`).join("\n");
                             const encodedUri = encodeURI(csvContent);
                             const link = document.createElement("a");
                             link.setAttribute("href", encodedUri);
@@ -225,7 +225,7 @@ const AdminDashboard = () => {
                                         <Pie
                                             data={[
                                                 { name: 'Total Students', value: stats.totalStudents },
-                                                { name: 'With Hackathons', value: stats.studentsWithHackathons || stats.studentsWithInternships },
+                                                { name: 'With Hackathons', value: stats.studentsWithHackathons },
                                                 { name: 'Completed Requirements', value: stats.studentsCompletedCredits }
                                             ]}
                                             cx="50%"
