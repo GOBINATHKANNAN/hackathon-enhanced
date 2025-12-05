@@ -303,8 +303,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 For support and queries:
 - **Thiagarajar College of Engineering**
 - **Department of Computer Science and Business Systems**
-- **Email**: support@tce.edu
-- **Phone**: +91 452 2482240
+- **Email**: gobinath@student.tce.edu
+- **Phone**: +91 8754882673,8925775915
 
 ## 🎉 Acknowledgments
 
