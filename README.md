@@ -246,7 +246,6 @@ hackathon-enhanced/
   registerNo: String (unique),
   department: String,
   year: String ['1st', '2nd', '3rd', '4th'],
-  credits: Number (default: 0),
   verified: Boolean (default: false)
 }
 ```
